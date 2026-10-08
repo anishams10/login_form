@@ -3,33 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login <Form></Form></title>
+    <title>Registration form</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body style="background-color: #363636; color: #fff;">
-    <!--Login Form-->
-    <form>
-        <h1>Create an account</h1>
-        <p>Already have an account? <a href="" style="color: aqua;">Login</a></p>
-        <div>
-            <div>
-                <div>
-                    <input type="text" placeholder="First Name" id="firstName" name="First Name">
-                    <input type="text" placeholder="Last Name" id="lastName" name="Last Name">
-                </div>
-            </div>
-            <div>
-                <input type="email" placeholder="Email" id="email" name="Email">
-            </div>
-            <div>
-                <input type="password" placeholder="Enter your password" id="password">
-            </div>
-            <div>
-                <input type="checkbox" id="box">
-                <p>I agree to <a href="" style="color: aqua;">Terms & Conditions</a></p>
-            </div>
-            <button type="button" id="btn-submit" disabled >Submit</button>
+
+<body class="bg-sky-50 text-gray-800 mx-0">
+
+    <div class="flex gap-8 justify-between items-center my-2">
+        <div class="w-1/2 rounded-2xl overflow-hidden hidden lg:block">
+            <img src="form.jpg" alt="" class="w-fit h-fit rounded-2xl">
         </div>
-    </form>
+        <div class="md:p-16 p-4 lg:w-1/2 ">
+            <!--Login Form-->
+        <form class="flex flex-col gap-3 ">
+            <h1 class="text-4xl font-bold">Create an account</h1>
+            <p>Already have an account? <a href="" class="text-sky-600 underline">Login</a></p>
+            
+                <div class="flex flex-col gap-4 ">
+                    <div class="flex flex-col md:flex-row gap-4 w-full md:justify-between">
+                        <div class="flex flex-col md:w-1/2">
+                            <input type="text" placeholder="First Name" id="firstName" name="First Name" required class="border p-2 rounded-lg">
+                            <p id="firstName_error" class="text-rose-400 text-sm"></p>
+                        </div>
+                        <div class="flex flex-col md:w-1/2">
+                            <input type="text" placeholder="Last Name" id="lastName" name="Last Name" class="border p-2 rounded-lg">
+                            <p id="lastName_error" class="text-rose-400 text-sm"></p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <input type="email" placeholder="Email" id="email" name="Email" class="border p-2 rounded-lg">
+                        <p id="email_error" class="text-rose-400 text-sm"></p>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row gap-4 w-full md:justify-between">
+                        <div class="flex flex-col md:w-1/2">
+                            <input type="password" placeholder="Enter your password" id="password" class="border p-2 rounded-lg">
+                            <p id="password_error" class="text-rose-400 text-sm"></p>
+                        </div>
+                        <div class="flex flex-col md:w-1/2">
+                            <input type="password" placeholder="Confirm password" id="confirmPassword" class="border p-2 rounded-lg">
+                            <p id="confirmPassword_error" class="text-rose-400 text-sm"></p>
+                        </div>
+                    </div>
+                    <div class="flex gap-1">
+                        <input type="checkbox" id="box">
+                        <p>I agree to <a href="" class="text-sky-600 underline">Terms & Conditions</a></p>
+                    </div>
+                    <button type="button" id="btn-submit" disabled class="bg-slate-500 text-gray-600 p-3 rounded-2xl cursor-pointer">Submit</button>
+                </div>
+                <div style="display:flex; align-items:center; margin-top: 10px;">
+                    <div style="flex:1; border-top:1px solid #000;"></div>
+                    <span style="margin:0 10px;">Or</span>
+                    <div style="flex:1; border-top:1px solid #000;"></div>
+                </div>
+                <div class="flex flex-col md:flex-row gap-4 justify-around relative">
+                    <div class="flex gap-2 justify-center items-center rounded-2xl ring-1 ring-black/60 p-3 md:w-1/2 cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" class="w-4 h-4"  viewBox="0 0 256 262" id="google"><path fill="#4285F4" d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622 38.755 30.023 2.685.268c24.659-22.774 38.875-56.282 38.875-96.027"></path><path fill="#34A853" d="M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055-34.523 0-63.824-22.773-74.269-54.25l-1.531.13-40.298 31.187-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1"></path><path fill="#FBBC05" d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82 0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602l42.356-32.782"></path><path fill="#EB4335" d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0 79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251"></path></svg>
+                        Google
+                    </div>
+                    <div class="flex gap-2 justify-center items-center rounded-2xl ring-1 ring-black/60 p-3 md:w-1/2 cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" id="apple"><path d="M14.94,5.19A4.38,4.38,0,0,0,16,2,4.44,4.44,0,0,0,13,3.52,4.17,4.17,0,0,0,12,6.61,3.69,3.69,0,0,0,14.94,5.19Zm2.52,7.44a4.51,4.51,0,0,1,2.16-3.81,4.66,4.66,0,0,0-3.66-2c-1.56-.16-3,.91-3.83.91s-2-.89-3.3-.87A4.92,4.92,0,0,0,4.69,9.39C2.93,12.45,4.24,17,6,19.47,6.8,20.68,7.8,22.05,9.12,22s1.75-.82,3.28-.82,2,.82,3.3.79,2.22-1.24,3.06-2.45a11,11,0,0,0,1.38-2.85A4.41,4.41,0,0,1,17.46,12.63Z" fill="#000000"></path></svg>
+                        Apple
+                    </div>
+                </div>
+        </form>
+        </div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
